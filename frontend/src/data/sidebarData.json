@@ -1,0 +1,107 @@
+[
+  {
+    "id": "dashboard_patient",
+    "title": "Dashboard",
+    "path": "/patient",
+    "icon": "MdDashboard",
+    "roles": ["patient"]
+  },
+  {
+    "id": "medical_history",
+    "title": "Medical History",
+    "path": "/patient/medical-history",
+    "icon": "MdHistory",
+    "roles": ["patient"]
+  },
+  {
+    "id": "appointments",
+    "title": "Appointments",
+    "path": "/patient/appointments",
+    "icon": "MdEvent",
+    "roles": ["patient"]
+  },
+  {
+    "id": "admission_discharge",
+    "title": "Admission/Discharge",
+    "path": "/patient/admission",
+    "icon": "MdLocalHospital",
+    "roles": ["patient"]
+  },
+  {
+    "id": "communication",
+    "title": "Communication",
+    "path": "/patient/communication",
+    "icon": "MdMessage",
+    "roles": ["patient"]
+  },
+  {
+    "id": "dashboard_staff",
+    "title": "Staff Dashboard",
+    "path": "/staff",
+    "icon": "MdGroups",
+    "roles": ["staff"]
+  },
+  {
+    "id": "roster",
+    "title": "Roster",
+    "path": "/staff/roster",
+    "icon": "MdList",
+    "roles": ["staff"]
+  },
+  {
+    "id": "attendance",
+    "title": "Attendance",
+    "path": "/staff/attendance",
+    "icon": "MdAccessTime",
+    "roles": ["staff"]
+  },
+  {
+    "id": "departments",
+    "title": "Departments",
+    "path": "/staff/departments",
+    "icon": "MdApartment",
+    "roles": ["staff"]
+  },
+  {
+    "id": "notifications",
+    "title": "Notifications",
+    "path": "/staff/notifications",
+    "icon": "MdNotifications",
+    "roles": ["staff"]
+  },
+  {
+    "id": "dashboard_finance",
+    "title": "Finance Dashboard",
+    "path": "/finance",
+    "icon": "MdAccountBalance",
+    "roles": ["finance"]
+  },
+  {
+    "id": "billing",
+    "title": "Billing",
+    "path": "/finance/billing",
+    "icon": "MdReceipt",
+    "roles": ["finance"]
+  },
+  {
+    "id": "insurance",
+    "title": "Insurance",
+    "path": "/finance/insurance",
+    "icon": "MdHealthAndSafety",
+    "roles": ["finance"]
+  },
+  {
+    "id": "revenue",
+    "title": "Revenue Trends",
+    "path": "/finance/revenue",
+    "icon": "MdShowChart",
+    "roles": ["finance"]
+  },
+  {
+    "id": "overdue",
+    "title": "Overdue Payments",
+    "path": "/finance/overdue",
+    "icon": "MdReportProblem",
+    "roles": ["finance"]
+  }
+]
