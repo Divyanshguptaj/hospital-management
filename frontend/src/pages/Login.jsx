@@ -46,12 +46,12 @@ const Registration = () => {
       return;
     }
     formData.role = selectedRole.toLowerCase();
-    // console.log(formData)
+    console.log(formData)
     try {
       const response = await axios.post("https://hospital-management-txfj.onrender.com/api/auth/login", {
         ...formData,
       });
-      // console.log(response)
+      console.log(response)
       if (response.data.success) {
         // console.log(response.data.token)
         localStorage.setItem("token", response.data.token);
