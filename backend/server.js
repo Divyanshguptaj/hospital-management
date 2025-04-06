@@ -12,7 +12,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({ origin: ["http://localhost:3000","https://hospital-management-56yz.vercel.app/"], credentials: true }));
+app.use(cors({ origin: ["http://localhost:3000","https://hospital-management-seven-psi.vercel.app/"], credentials: true }));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
