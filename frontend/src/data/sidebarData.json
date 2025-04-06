@@ -21,16 +21,16 @@
     "roles": ["patient"]
   },
   {
-    "id": "admission_discharge",
-    "title": "Admission/Discharge",
-    "path": "/patient/admission",
+    "id": "reports",
+    "title": "Reports",
+    "path": "/patient/reports",
     "icon": "MdLocalHospital",
     "roles": ["patient"]
   },
   {
     "id": "communication",
-    "title": "Communication",
-    "path": "/patient/communication",
+    "title": "Edit Profile",
+    "path": "/patient/edit-profile",
     "icon": "MdMessage",
     "roles": ["patient"]
   },
@@ -43,29 +43,29 @@
   },
   {
     "id": "roster",
-    "title": "Roster",
-    "path": "/staff/roster",
+    "title": "Patients",
+    "path": "/staff/patients",
     "icon": "MdList",
-    "roles": ["staff"]
-  },
-  {
-    "id": "attendance",
-    "title": "Attendance",
-    "path": "/staff/attendance",
-    "icon": "MdAccessTime",
     "roles": ["staff"]
   },
   {
     "id": "departments",
     "title": "Departments",
-    "path": "/staff/departments",
+    "path": "/staff/department",
     "icon": "MdApartment",
     "roles": ["staff"]
   },
   {
     "id": "notifications",
-    "title": "Notifications",
-    "path": "/staff/notifications",
+    "title": "Add Patient",
+    "path": "/staff/add-patient",
+    "icon": "MdAddCircle",
+    "roles": ["staff"]
+  },
+  {
+    "id": "notifications",
+    "title": "Edit Profile",
+    "path": "/staff/edit-profile",
     "icon": "MdNotifications",
     "roles": ["staff"]
   },

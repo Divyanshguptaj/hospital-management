@@ -11,6 +11,8 @@ const patientSchema = new mongoose.Schema({
   ehrNumber: String,
   status: { type: String, enum: ['Admitted', 'Discharged'], default: 'Admitted' },
   medicalHistory: [{
+    doctor: String,
+    department: String,
     date: Date,
     diagnosis: String,
     medications: [String],
@@ -19,8 +21,14 @@ const patientSchema = new mongoose.Schema({
   appointments: [{
     date: Date,
     doctor: String,
-    department: String
-  }]
+    department: String,
+    status: { type: String, enum: ['completed', 'pending', 'cancelled'], default: 'pending' },
+  }],
+  reports: [{title: String,
+    doctor: String,
+    department: String,
+    date: Date,
+    pdfUrl: String}]
 });
 
 module.exports = mongoose.model('Patient', patientSchema);

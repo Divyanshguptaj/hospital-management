@@ -22,7 +22,7 @@ const Sidebar = ({ userRole }) => {
               <NavLink
                 to={item.path}
                 className="flex items-center p-2 hover:bg-gray-700 rounded transition h-16"
-                activeClassName="bg-gray-800"
+                activeclassname="bg-gray-800"
               >
                 {IconComponent && <IconComponent className="text-xl mr-3" />}
                 {item.title}

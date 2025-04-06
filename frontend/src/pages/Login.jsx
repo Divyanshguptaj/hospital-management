@@ -46,14 +46,14 @@ const Registration = () => {
       return;
     }
     formData.role = selectedRole.toLowerCase();
-    console.log(formData)
+    // console.log(formData)
     try {
       const response = await axios.post("http://localhost:5000/api/auth/login", {
         ...formData,
       });
-      console.log(response)
+      // console.log(response)
       if (response.data.success) {
-        console.log(response.data.token)
+        // console.log(response.data.token)
         localStorage.setItem("token", response.data.token);
         toast.success("Registration successful!");
         console.log(selectedRole.toLowerCase())

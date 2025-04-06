@@ -4,7 +4,7 @@ const Patient = require('../models/patientModel');
 exports.getAllPatients = async (req, res) => {
   try {
     const patients = await Patient.find();
-    res.json(patients);
+    return res.json(patients);
   } catch (err) {
     res.status(500).json({ message: 'Error fetching patients' });
   }
@@ -92,4 +92,99 @@ exports.sendReminder = async (req, res) => {
 
   // Simulate API
   res.json({ message: `${type.toUpperCase()} reminder sent (simulated)` });
+};
+
+
+// 📋 Get logged-in patient's profile
+exports.getPatientDetails = async (req, res) => {
+  try {
+    const patient = await Patient.findById(req.user.id)
+      .populate('appointments'); // Only if appointments are referenced
+    // console.log("lasdjfsdl",patient)
+    return res.json(patient);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching patient details' });
+  }
+};
+
+
+// 📅 Get all appointments for logged-in patient
+exports.getAllAppointments = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    // Fetch the user from the database
+    const user = await Patient.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    // Assuming appointments are stored in user.appointments
+    const appointments = user.appointments || [];
+
+    return res.status(200).json({success: true, message:"Fetched user appointment details", appointments});
+  } catch (err) {
+    console.error("Error fetching appointments:", err);
+    return res.status(500).json({
+      message: "Failed to retrieve appointments.",
+      error: err.message,
+    });
+  }
+};
+
+// 📜 Get medical history for logged-in patient
+exports.getMedicalHistory = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    const user = await Patient.findById(userId).select("medicalHistory");
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({ medicalHistory: user.medicalHistory });
+  } catch (err) {
+    console.error("Error fetching medical history:", err);
+    res.status(500).json({ message: "Server error fetching medical history" });
+  }
+};
+
+// 📑 Get reports for logged-in patient
+exports.getAllReports = async (req, res) => {
+  try {
+    const patient = await Patient.findById(req.user.id);
+    if (!patient) return res.status(404).json({ message: "Patient not found" });
+
+    res.json({ reports: patient.reports || [] });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Error fetching reports" });
+  }
+};
+
+// controllers/patientController.js
+exports.updateProfile = async (req, res) => {
+  try {
+    const { firstName, lastName, contact, age, gender } = req.body;
+
+    const patient = await Patient.findById(req.user.id);
+    if (!patient) {
+      return res.status(404).json({ message: "Patient not found" });
+    }
+
+    patient.firstName = firstName || patient.firstName;
+    patient.lastName = lastName || patient.lastName;
+    patient.contact = contact || patient.contact;
+    patient.age = age || patient.age;
+    patient.gender = gender || patient.gender;
+
+    await patient.save();
+
+    res.json({ message: "Profile updated successfully", patient });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Error updating profile" });
+  }
 };

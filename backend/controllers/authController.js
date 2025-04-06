@@ -28,9 +28,10 @@ exports.loginUser = async (req, res) => {
       return res.status(400).json({ message: "Invalid role" });
   }
   try {
-    const user = await Patient.findOne({email});
+    const user = await Model.findOne({email});
+    console.log(user,"1")
     if (!user) return res.status(404).json({ message: `${role} not found` });
-    
+    // console.log(user)
     
     // const isMatch = await bcrypt.compare(password, user.password);
     const isMatch = password === user.password;
