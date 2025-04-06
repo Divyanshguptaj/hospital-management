@@ -10,7 +10,7 @@ const MedicalHistory = () => {
     const fetchMedicalHistory = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/patient/medical-history", {
+        const response = await axios.get("https://hospital-management-txfj.onrender.com/api/patient/medical-history", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

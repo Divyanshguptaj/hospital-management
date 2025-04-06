@@ -22,7 +22,7 @@ const AddPatientPage = () => {
 
   const handleAddPatient = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/staff/addPatient", formData);
+      const res = await axios.post("https://hospital-management-txfj.onrender.com/api/staff/addPatient", formData);
       toast.success("Patient added successfully!");
       setFormData({
         firstName: "",

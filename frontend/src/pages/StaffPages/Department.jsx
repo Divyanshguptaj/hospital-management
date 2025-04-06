@@ -10,7 +10,7 @@ const Department = () => {
     const fetchStaff = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/staff/all", {
+        const res = await axios.get("https://hospital-management-txfj.onrender.com/api/staff/all", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStaffList(res.data);

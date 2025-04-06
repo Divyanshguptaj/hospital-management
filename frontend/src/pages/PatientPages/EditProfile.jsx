@@ -18,7 +18,7 @@ const EditProfile = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/patient/me", {
+        const res = await axios.get("https://hospital-management-txfj.onrender.com/api/patient/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const formData = {
@@ -57,7 +57,7 @@ const EditProfile = () => {
     setMessage("");
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.put("http://localhost:5000/api/patient/updateProfile", formData, {
+      const res = await axios.put("https://hospital-management-txfj.onrender.com/api/patient/updateProfile", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Profile updated successfully!");

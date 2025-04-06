@@ -34,7 +34,7 @@ const Patients = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get(
-        "http://localhost:5000/api/patient/getAllPatients",
+        "https://hospital-management-txfj.onrender.com/api/patient/getAllPatients",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -59,7 +59,7 @@ const Patients = () => {
 
   const updatePatientStatus = async (id, newStatus) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/staff/updateStatus/${id}`, {
+      const response = await axios.put(`https://hospital-management-txfj.onrender.com/api/staff/updateStatus/${id}`, {
         status: newStatus,
       });
       toast.success("Status updated successfully!"); 
@@ -73,7 +73,7 @@ const Patients = () => {
   const updateAppointmentStatus = async (userId, appointmentIndex, newStatus) => {
     try {
       console.log(userId, appointmentIndex, newStatus);
-      await axios.put("http://localhost:5000/api/staff/updateAppointmentStatus", {
+      await axios.put("https://hospital-management-txfj.onrender.com/api/staff/updateAppointmentStatus", {
         userId,
         appointmentIndex,
         status: newStatus,
@@ -92,7 +92,7 @@ const Patients = () => {
   };
   const submitAppointment = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/staff/addAppointment/${selectedPatientId}`, {
+      await axios.put(`https://hospital-management-txfj.onrender.com/api/staff/addAppointment/${selectedPatientId}`, {
         appointment: { ...formData, status: "pending" },
       });
       toast.success("Appointment added successfully!");

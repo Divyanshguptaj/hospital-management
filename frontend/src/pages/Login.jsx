@@ -48,7 +48,7 @@ const Registration = () => {
     formData.role = selectedRole.toLowerCase();
     // console.log(formData)
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", {
+      const response = await axios.post("https://hospital-management-txfj.onrender.com/api/auth/login", {
         ...formData,
       });
       // console.log(response)

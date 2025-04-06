@@ -15,7 +15,7 @@ const PatientDashboard = () => {
 
       try {
         const userRes = await Promise.all([
-          axios.get("http://localhost:5000/api/patient/me", {
+          axios.get("https://hospital-management-txfj.onrender.com/api/patient/me", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
