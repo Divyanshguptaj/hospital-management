@@ -12,7 +12,12 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({ origin: ["http://localhost:3000","https://hospital-management-seven-psi.vercel.app/"], credentials: true }));
+app.use(cors({
+  origin: "https://hospital-management-seven-psi.vercel.app", // your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+// app.use(cors({ origin: ["http://localhost:3000","https://hospital-management-seven-psi.vercel.app/"], credentials: true }));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
