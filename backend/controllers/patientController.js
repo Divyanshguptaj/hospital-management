@@ -13,7 +13,7 @@ exports.getAllPatients = async (req, res) => {
 // 🔍 Search/filter patients by name/status
 exports.searchPatients = async (req, res) => {
   const { name, status } = req.query;
-  const query = {};
+  const query = {};  
 
   if (name) query.firstName = new RegExp(name, 'i');
   if (status) query.status = status;
