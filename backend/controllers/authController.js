@@ -12,7 +12,7 @@ exports.loginUser = async (req, res) => {
       .status(400)
       .json({ message: "Please provide email, password, and role" });
   }
-
+  console.log("object")
   let Model;
   switch (role.toLowerCase()) {
     case "patient":
