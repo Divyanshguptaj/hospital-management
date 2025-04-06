@@ -20,8 +20,6 @@ import Appointments from "./pages/PatientPages/Appointments";
 import Reports from "./pages/PatientPages/Reports";
 
 import StaffDashboard from "./pages/StaffPages/StaffDashboard";
-import Roster from "./pages/StaffPages/Patients";
-import Attendance from "./pages/StaffPages/Attendance";
 
 import FinancialDashboard from "./pages/FinancialPages/FinancialDashboard";
 import Billing from "./pages/FinancialPages/Billing";
