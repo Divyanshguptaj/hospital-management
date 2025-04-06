@@ -29,7 +29,7 @@ exports.loginUser = async (req, res) => {
   }
   try {
     const user = await Model.findOne({email});
-    console.log(user,"1")
+    // console.log(user,"1")
     if (!user) return res.status(404).json({ message: `${role} not found` });
     // console.log(user)
     

@@ -11,13 +11,14 @@ const StaffDashboard = () => {
     const fetchStaffData = async () => {
       try {
         const token = localStorage.getItem("token");
+        console.log(token)
         const res = await axios.get("http://localhost:5000/api/staff/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStaff(res.data);
       } catch (err) {
         console.error("Error fetching staff data:", err);
-        navigate("/login");
+        // navigate("/login");
       }
     };
 
