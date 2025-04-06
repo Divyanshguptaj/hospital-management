@@ -12,7 +12,7 @@ const StaffDashboard = () => {
       try {
         const token = localStorage.getItem("token");
         console.log(token)
-        const res = await axios.get("http://localhost:5000/api/staff/me", {
+        const res = await axios.get("https://hospital-management-txfj.onrender.com/api/staff/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStaff(res.data);
